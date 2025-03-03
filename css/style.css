@@ -37,7 +37,7 @@ body{
 ::-webkit-scrollbar-thumb {
   cursor: pointer;
   /* background: ⁠#ca9938; */
-  background: #0093ff;
+  /* background: #0093ff; */
 }
 
 ::selection{

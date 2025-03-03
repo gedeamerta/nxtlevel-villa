@@ -149,6 +149,12 @@
         }
     });
 
+	$('.js-target-scroll').on('click', function(e) {
+		e.preventDefault();
+		var target = $(this).attr('href');
+		$.fn.pagepiling.moveTo(target.replace('#', ''));
+	});
+
 
     
     /*-------------------------------------------------------------------------------
@@ -502,23 +508,25 @@
       	$('.pagepiling').pagepiling({
     		scrollingSpeed: 280,
 		    loopBottom:true,
-		   	afterLoad: function(anchorLink, index){
-				if(index == 1 || index == 4 || index == 5){  // 1 ,3 ,5 - Sections with white bacgkrounds
-	               $('.navbar').addClass('navbar-white');
-	               $('#pp-nav, .lang-bottom, .copy-bottom').addClass('white');
-	            }
-	            else{
-	            	$('.navbar').removeClass('navbar-white');
-	            	$('#pp-nav, .lang-bottom, .copy-bottom').removeClass('white');
-	            }
-	            if ( $('.pp-section.active').scrollTop() > 0 ){
-	            	$('.navbar').removeClass('navbar-white');
-	            }
+		   	// afterLoad: function(anchorLink, index){
+			// 	$('.navbar').addClass('navbar-white');
+			// 	$('#pp-nav, .lang-bottom, .copy-bottom').addClass('white');
+			// 	// if(index == 1 || index == 4 || index == 5){  // 1 ,3 ,5 - Sections with white bacgkrounds
+	        //     //    $('.navbar').addClass('navbar-white');
+	        //     //    $('#pp-nav, .lang-bottom, .copy-bottom').addClass('white');
+	        //     // }
+	        //     // else{
+	        //     // 	$('.navbar').removeClass('navbar-white');
+	        //     // 	$('#pp-nav, .lang-bottom, .copy-bottom').removeClass('white');
+	        //     // }
+	        //     // if ( $('.pp-section.active').scrollTop() > 0 ){
+	        //     // 	$('.navbar').removeClass('navbar-white');
+	        //     // }
 	            
-  			},
-  			onLeave: function(){
-  				$('.section.active .bg-changer .section-bg').removeClass('active').eq(0).addClass('active');
-  			}
+  			// },
+  			// onLeave: function(){
+  			// 	$('.section.active .bg-changer .section-bg').removeClass('active').eq(0).addClass('active');
+  			// }
 		});
 
 
@@ -529,15 +537,15 @@
 
 
 
-		$('.pp-scrollable').on('scroll', function () {
-    		var scrollTop =$(this).scrollTop();
-    		if (scrollTop > 0 ) {
-    			$('.navbar-2').removeClass('navbar-white');
-    		}
-    		else{
-    			$('.navbar-2').addClass('navbar-white');
-    		}
-		});
+		// $('.pp-scrollable').on('scroll', function () {
+    	// 	var scrollTop =$(this).scrollTop();
+    	// 	if (scrollTop > 0 ) {
+    	// 		$('.navbar-2').removeClass('navbar-white');
+    	// 	}
+    	// 	else{
+    	// 		$('.navbar-2').addClass('navbar-white');
+    	// 	}
+		// });
 
 
 
@@ -566,10 +574,10 @@
 
 
 
-    $('.project-box').on('mouseover',function(){
-    	var index = $('.project-box').index(this);
-    	$('.bg-changer .section-bg').removeClass('active').eq(index).addClass('active');
-    });
+    // $('.project-box').on('mouseover',function(){
+    // 	var index = $('.project-box').index(this);
+    // 	$('.bg-changer .section-bg').removeClass('active').eq(index).addClass('active');
+    // });
 
 
 
@@ -579,26 +587,26 @@
 
 
 
-	if ($('.js-form').length) {
-		$('.js-form').each(function(){
-			$(this).validate({
-				errorClass: 'error wobble-error',
-			    submitHandler: function(form){
-		        	$.ajax({
-			            type: "POST",
-			            url:"mail.php",
-			            data: $(form).serialize(),
-			            success: function() {
-		                	$('.success-message').show();
-		                },
+	// if ($('.js-form').length) {
+	// 	$('.js-form').each(function(){
+	// 		$(this).validate({
+	// 			errorClass: 'error wobble-error',
+	// 		    submitHandler: function(form){
+	// 	        	$.ajax({
+	// 		            type: "POST",
+	// 		            url:"mail.php",
+	// 		            data: $(form).serialize(),
+	// 		            success: function() {
+	// 	                	$('.success-message').show();
+	// 	                },
 
-		                error: function(){
-			                $('.error-message').show();
-			            }
-			        });
-			    }
-			});
-		});
-	}
+	// 	                error: function(){
+	// 		                $('.error-message').show();
+	// 		            }
+	// 		        });
+	// 		    }
+	// 		});
+	// 	});
+	// }
 
 })(jQuery);
