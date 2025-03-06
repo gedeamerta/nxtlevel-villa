@@ -6697,6 +6697,11 @@ button.close {
     display: none !important;
   }
 }
+@media (min-width: 300px) and (max-width: 991px) {
+  .hidden-sm-mobile {
+    display: none !important;
+  }
+}
 @media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md {
     display: none !important;

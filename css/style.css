@@ -18,8 +18,16 @@ html{
   -webkit-font-smoothing: antialiased;
 }
 
+@font-face {
+  font-family: 'Garet-Regular';
+  src: url('../garet/Garet-Book.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
 body{
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Garet-Regular', sans-serif !important;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.025em;
