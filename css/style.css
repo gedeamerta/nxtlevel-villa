@@ -221,6 +221,51 @@ a:focus{
   text-decoration: none;
 }
 
+.image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.image-container img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: block;
+  width: 100%; /* Adjust as needed */
+}
+
+.image-container:hover img {
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background: rgba(0, 0, 0, 0.8); /* Optional for better readability */
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.image-container:hover .overlay-text {
+  opacity: 2;
+}
+
+/* .img-contact-us {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.img-contact-us:hover {
+  opacity: 0.8; 
+  transform: scale(0.95); 
+} */
+
 
 /* 1.3 Fields */
 
@@ -955,6 +1000,14 @@ a.brand:focus{
   padding: 12px;
   border-radius: 15px;
   width: 90%;
+  margin: auto;
+}
+
+.text-badge-yellow-contact {
+  color: white !important;
+  background-color: #ca9938 !important;
+  padding: 12px;
+  border-radius: 15px;
   margin: auto;
 }
 
